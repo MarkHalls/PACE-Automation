@@ -1,25 +1,3 @@
-# This program accepts csv files stored
-# in c:\projects\approvebytask.csv in the form of "PTN,Date"
-# Author: Mark Halls
-# Last update: 3/10/16
-
-# Required Packages:
-# pip install send2trash
-# pip install requests
-# pip install beautifulsoup4
-# pip install selenium
-# pip install openpyxl
-# pip install PyPDF2
-# pip install python-docx (install python-docx, not docx)
-# pip install imapclient
-# pip install pyzmail
-# pip install twilio
-# pip install pillow
-# pip install pyobjc-core (on OS X only)
-# pip install pyobjc (on OS X only)
-# pip install python3-xlib (on Linux only)
-# pip install pyautogui
-
 import csv
 import pyautogui
 
@@ -96,8 +74,6 @@ def start(taskCode, path):
             # click Promote to Approve select all checkbox
             click('C:/projects/images/promoteselectall.png',
                   "Promote Checkbox")
-
-            #input("Press Enter to continue...")
 
             # click submit button
             click('C:/projects/images/submitbutton.png', "Submit button")
