@@ -5,15 +5,21 @@ pyautogui.PAUSE = 0.50
 pyautogui.FAILSAFE = True
 
 
-#**************************************
-#         Update these values
-#**************************************
+#********************************************************#
+#         Update these values                            #
+#********************************************************#
+# Codes for Daily Approvals, set isNotContained = True   #
+# CI025, CI030, CI031, CI032, CI060, RE020, CI037, CI220 #
+#                                                        #
+# For RE020 approvals, set isNotContained = False        #
+#                                                        #
 
+isNotContained = True
 taskCode = "RE020"
 csvPath = "c:\projects\reforecast.csv"
 
-#**************************************
-
+#                                                        #
+#********************************************************#
 
 
 def click(fullPathToImage, name):
@@ -57,7 +63,10 @@ def submitDates(taskCode, path):
         click('C:/projects/images/next.png',           "Next Button")
         click('C:/projects/images/taskcodefilter.png', "Task Code Filter")
 
-        click('C:/projects/images/isequalto.png', "Is Equal To")
+        if isNotContained:
+            click('C:/projects/images/isnotcontained.png', "Is Not Contained")
+        else:
+            click('C:/projects/images/isequalto.png', "Is Equal To")
         pyautogui.typewrite(taskCode)
 
         click('C:/projects/images/filterbutton.png',     "Filter Button")
