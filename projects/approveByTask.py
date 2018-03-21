@@ -6,7 +6,7 @@ pyautogui.FAILSAFE = True
 
 
 #********************************************************#
-#         Update these values                            #
+#                  Update these values                   #
 #********************************************************#
 # Codes for Daily Approvals, set isNotContained = True   #
 # CI025, CI030, CI031, CI032, CI060, RE020, CI037, CI220 #
