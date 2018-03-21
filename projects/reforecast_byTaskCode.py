@@ -1,4 +1,5 @@
 import os
+import time
 import csv
 import pyautogui
 
@@ -9,15 +10,20 @@ pyautogui.FAILSAFE = True
 sourceCSV = '/home/mh/github/PACE-Automation/projects/csv/forecastdate.csv'
 
 
-def click(fullPathToImage, error):
+def click(fullPathToImage, imageName):
     tries = 0
-    while tries <= 100:
+    while tries <= 50:
         try:
             pyautogui.click(pyautogui.center(
                 pyautogui.locateOnScreen(fullPathToImage)))
         except:
-            print(error, " not found, trying again")
+            print(imageName, "not found, trying again...")
+            time.sleep(1)
             tries += 1
+    if tries >= 50:
+        print("Program has exited because it could not find the image",
+              fullPathToImage, "Please verify your screenshots are up to date.")
+        raise SystemExit
 
 
 def readFile(path: str):
